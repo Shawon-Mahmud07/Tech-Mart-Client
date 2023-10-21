@@ -14,6 +14,11 @@ import React, { useState } from "react";
 const NavBar = () => {
   const [openNav, setOpenNav] = React.useState(false);
   const [dark, setDark] = useState(false);
+
+  const toggleTheme = () => {
+    setDark(!dark);
+    document.documentElement.classList.toggle("dark");
+  };
   React.useEffect(() => {
     window.addEventListener(
       "resize",
@@ -29,7 +34,7 @@ const NavBar = () => {
           className={({ isActive }) =>
             isActive
               ? "flex items-center text-[#F04923] font-bold underline text-lg"
-              : "flex items-center text-[#706F6F] text-lg"
+              : "flex items-center text-[#706F6F] dark:text-white text-lg"
           }
         >
           Home
@@ -41,7 +46,7 @@ const NavBar = () => {
         className={({ isActive }) =>
           isActive
             ? "flex items-center text-[#F04923] font-bold underline text-lg"
-            : "flex items-center text-[#706F6F] text-lg"
+            : "flex items-center text-[#706F6F] dark:text-white text-lg"
         }
       >
         Add Product
@@ -51,7 +56,7 @@ const NavBar = () => {
         className={({ isActive }) =>
           isActive
             ? "flex items-center text-[#F04923] font-bold underline text-lg"
-            : "flex items-center text-[#706F6F] text-lg"
+            : "flex items-center text-[#706F6F] dark:text-white text-lg"
         }
       >
         Register
@@ -62,17 +67,17 @@ const NavBar = () => {
           className={({ isActive }) =>
             isActive
               ? "flex items-center text-[#F04923] font-bold underline text-lg"
-              : "flex items-center text-[#706F6F] text-lg"
+              : "flex items-center text-[#706F6F] dark:text-white text-lg"
           }
         >
           Cart{" "}
-          <HiShoppingCart className="text-3xl text-[#29276B]"></HiShoppingCart>
+          <HiShoppingCart className="text-3xl text-[#29276B] dark:text-white"></HiShoppingCart>
         </NavLink>
       </Typography>
       <Typography
-        onClick={() => setDark(!dark)}
+        onClick={() => toggleTheme()}
         as="li"
-        className=" text-3xl text-[#29276B] md:-ml-4 font-normal"
+        className=" text-3xl text-[#29276B] md:-ml-4 font-normal dark:text-white"
       >
         {dark ? <HiMoon></HiMoon> : <HiSun></HiSun>}
       </Typography>
@@ -81,7 +86,7 @@ const NavBar = () => {
   return (
     <Navbar
       data-aos="fade-right"
-      className=" rounded-none shadow py-2 bg-[#ede8e8] "
+      className=" rounded-none shadow py-2 bg-[#ede8e8] dark:bg-black "
     >
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <div className="lg:flex items-center">
@@ -139,7 +144,7 @@ const NavBar = () => {
         </div>
         <IconButton
           variant="text"
-          className="ml-2 h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+          className="ml-2 h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden dark:text-white"
           ripple={false}
           onClick={() => setOpenNav(!openNav)}
         >

@@ -8,9 +8,8 @@ import BrandCards from "./BrandCards";
 
 const Home = () => {
   const brandCards = useLoaderData();
-  console.log(brandCards);
   return (
-    <div>
+    <div className="dark:bg-black">
       <NavBar></NavBar>
       <Banner></Banner>
       <BrandCards brandCards={brandCards}></BrandCards>
