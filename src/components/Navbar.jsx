@@ -5,13 +5,15 @@ import {
   Button,
   IconButton,
 } from "@material-tailwind/react";
+import { HiShoppingCart, HiMoon, HiSun } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
 import userDefaultPicture from "../assets/Img/user.png";
 import logo from "../assets/Img/logo.png";
-import React from "react";
+import React, { useState } from "react";
 
 const NavBar = () => {
   const [openNav, setOpenNav] = React.useState(false);
+  const [dark, setDark] = useState(false);
   React.useEffect(() => {
     window.addEventListener(
       "resize",
@@ -42,29 +44,37 @@ const NavBar = () => {
             : "flex items-center text-[#706F6F] text-lg"
         }
       >
-        Gallery
+        Add Product
       </NavLink>
       <NavLink
-        to="/Contact"
+        to="/register"
         className={({ isActive }) =>
           isActive
             ? "flex items-center text-[#F04923] font-bold underline text-lg"
             : "flex items-center text-[#706F6F] text-lg"
         }
       >
-        Contact Us
+        Register
       </NavLink>
       <Typography as="li" variant="small" className="p-1 font-normal">
         <NavLink
-          to="/register"
+          to="/cart"
           className={({ isActive }) =>
             isActive
               ? "flex items-center text-[#F04923] font-bold underline text-lg"
               : "flex items-center text-[#706F6F] text-lg"
           }
         >
-          Register
+          Cart{" "}
+          <HiShoppingCart className="text-3xl text-[#29276B]"></HiShoppingCart>
         </NavLink>
+      </Typography>
+      <Typography
+        onClick={() => setDark(!dark)}
+        as="li"
+        className=" text-3xl text-[#29276B] md:-ml-4 font-normal"
+      >
+        {dark ? <HiMoon></HiMoon> : <HiSun></HiSun>}
       </Typography>
     </ul>
   );
