@@ -7,7 +7,7 @@ const Support = () => {
         <div className="w-full md:w-6/12">
           <img className="w-full h-full " src={support} alt="" />
         </div>
-        <div className="w-full md:w-6/12 text-center bg-[#ececec] rounded-md py-3 md:py-36">
+        <div className="w-full md:w-6/12 text-center bg-[#E6E6E6] rounded-md py-3 md:py-36">
           <h2 className="text-xl md:text-3xl text-[#29276B] font-semibold">
             24/7 Support
           </h2>

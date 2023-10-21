@@ -1,0 +1,32 @@
+[
+  {
+    "_id": 1,
+    "title": "Apple",
+    "image_url": "https://st3.depositphotos.com/1817276/19080/i/450/depositphotos_190808100-stock-photo-tokyo-japan-circa-march-2017.jpg"
+  },
+  {
+    "_id": 2,
+    "title": "Samsung",
+    "image_url": "https://i.pinimg.com/474x/1d/35/83/1d35833251dec0ad373ad7cbbbf4f3e2.jpg"
+  },
+  {
+    "_id": 3,
+    "title": "Sony",
+    "image_url": "https://www.logobee.com/uploads/Sony_logo.png"
+  },
+  {
+    "_id": 4,
+    "title": "Vivo",
+    "image_url": "https://static.vecteezy.com/system/resources/previews/020/927/792/original/vivo-brand-logo-phone-symbol-name-black-design-chinese-mobile-illustration-with-blue-background-free-vector.jpg"
+  },
+  {
+    "_id": 5,
+    "title": "Google",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThHxwc8-fHNCrs4SuGu9tc7tXrGPM7MAm4mNilXamqw3vqkxPz56GLFMdM_v9zyPzgqIk"
+  },
+  {
+    "_id": 6,
+    "title": "LG",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2021/10/LG-E.jpg"
+  }
+]

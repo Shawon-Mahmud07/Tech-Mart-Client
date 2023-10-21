@@ -4,7 +4,7 @@ import return1 from "../assets/Img/return.webp";
 
 const Feature = () => {
   return (
-    <div className="mt-10 md:mt-20 py-5 mx-4 md:mx-0 md:py-24 border-2 border-gray-600 rounded-2xl">
+    <div className="mt-10 md:mt-20 py-5 mx-4 md:mx-0 md:py-24 border-2 border-[#a9a7a7] rounded-3xl">
       <div className="flex flex-col md:flex-row justify-evenly items-center  space-y-5 md:space-y-0">
         <div className=" flex gap-5 ">
           <div className="rounded-full bg-[#29276B] p-2 md:p-3">
