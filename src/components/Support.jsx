@@ -11,7 +11,7 @@ const Support = () => {
             alt=""
           />
         </div>
-        <div className="w-full md:w-6/12 text-center bg-[#E6E6E6] dark:bg-black rounded-md py-3 md:py-36">
+        <div className="w-full md:w-6/12 text-center bg-[#E6E6E6] dark:bg-[#1e2432]  rounded-md py-3 md:py-36">
           <h2 className="text-xl md:text-3xl text-[#29276B] dark:brightness-200  font-semibold">
             24/7 Support
           </h2>

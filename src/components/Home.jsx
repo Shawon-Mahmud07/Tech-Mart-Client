@@ -9,7 +9,7 @@ import BrandCards from "./BrandCards";
 const Home = () => {
   const brandCards = useLoaderData();
   return (
-    <div className="dark:bg-black">
+    <div className="dark:bg-[#0F172A] ">
       <NavBar></NavBar>
       <Banner></Banner>
       <BrandCards brandCards={brandCards}></BrandCards>

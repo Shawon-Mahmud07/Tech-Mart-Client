@@ -9,7 +9,7 @@ const BrandCard = ({ brandCard }) => {
   const { title, image_url } = brandCard;
   return (
     <div>
-      <Card className="md:mt-6  cursor-pointer dark:bg-gray-900 mx-3 md:mx-0">
+      <Card className="md:mt-6  cursor-pointer dark:bg-[#1e2432]  mx-3 ">
         <CardHeader className="relative h-56">
           <img
             className="w-full h-full hover:scale-90 dark:brightness-50 "
@@ -18,7 +18,7 @@ const BrandCard = ({ brandCard }) => {
         </CardHeader>
 
         <CardFooter className=" text-center ">
-          <Typography className="text-2xl text-[#29276B] dark:bg-gray-700 dark:text-white font-medium bg-[#ede8e8] rounded-xl hover:text-[#F04923] dark:hover:text-[#F04923] py-1 ">
+          <Typography className="text-2xl text-[#29276B] dark:bg-gray-700 dark:text-white font-medium bg-[#d8d0d0] rounded-xl hover:text-[#F04923] dark:hover:text-[#F04923] py-1 duration-1000 ">
             {title}
           </Typography>
         </CardFooter>

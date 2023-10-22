@@ -9,16 +9,34 @@ import { HiShoppingCart, HiMoon, HiSun } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
 import userDefaultPicture from "../assets/Img/user.png";
 import logo from "../assets/Img/logo.png";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const NavBar = () => {
   const [openNav, setOpenNav] = React.useState(false);
-  const [dark, setDark] = useState(false);
+
+  // Dark Mood
+  const [mood, setMood] = useState("light");
 
   const toggleTheme = () => {
-    setDark(!dark);
-    document.documentElement.classList.toggle("dark");
+    const html = document.documentElement;
+    if (mood === "light") {
+      html.classList.remove("light");
+      html.classList.add("dark");
+      setMood("dark");
+      localStorage.setItem("mood", "dark");
+    } else {
+      html.classList.remove("dark");
+      html.classList.add("light");
+      setMood("light");
+      localStorage.setItem("mood", "light");
+    }
   };
+  useEffect(() => {
+    const currentMood = localStorage.getItem("mood") || "light";
+    document.documentElement.classList.add(currentMood);
+    setMood(currentMood);
+  }, []);
+
   React.useEffect(() => {
     window.addEventListener(
       "resize",
@@ -71,22 +89,22 @@ const NavBar = () => {
           }
         >
           Cart{" "}
-          <HiShoppingCart className="text-3xl text-[#29276B] dark:text-white"></HiShoppingCart>
+          <HiShoppingCart className="text-3xl text-[#29276B] hover:text-[#4d4aa4] dark:text-white"></HiShoppingCart>
         </NavLink>
       </Typography>
       <Typography
         onClick={() => toggleTheme()}
         as="li"
-        className=" text-3xl text-[#29276B] md:-ml-4 font-normal dark:text-white"
+        className=" text-3xl text-[#29276B] hover:text-[#4d4aa4] md:-ml-4 font-normal dark:text-white"
       >
-        {dark ? <HiMoon></HiMoon> : <HiSun></HiSun>}
+        {mood === "light" ? <HiMoon></HiMoon> : <HiSun></HiSun>}
       </Typography>
     </ul>
   );
   return (
     <Navbar
       data-aos="fade-right"
-      className=" rounded-none shadow py-2 bg-[#ede8e8] dark:bg-black "
+      className=" rounded-none shadow py-2 bg-[#ede8e8] dark:bg-[#0F172A]  "
     >
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <div className="lg:flex items-center">
@@ -135,7 +153,7 @@ const NavBar = () => {
           )} */}
           <Link to="/login">
             <Button
-              className="hidden md:block bg-[#29276B] rounded-md  font-semibold text-base text-[#fff]"
+              className="hidden md:block bg-[#29276B] hover:bg-[#3b2b94]  rounded-md  font-semibold text-base text-[#fff]"
               size="sm"
             >
               <span>Login</span>
