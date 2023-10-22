@@ -9,10 +9,17 @@ import { HiShoppingCart, HiMoon, HiSun } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
 import userDefaultPicture from "../assets/Img/user.png";
 import logo from "../assets/Img/logo.png";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const NavBar = () => {
   const [openNav, setOpenNav] = React.useState(false);
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogOut = () => {
+    logOut();
+  };
 
   // Dark Mood
   const [mood, setMood] = useState("light");
@@ -113,7 +120,7 @@ const NavBar = () => {
         <div className="hidden lg:block">{navList}</div>
         <div className="flex  items-center">
           {" "}
-          {/* {user ? (
+          {user ? (
             <img
               src={user.photoURL}
               alt="Profile"
@@ -125,17 +132,11 @@ const NavBar = () => {
               alt="Profile"
               className="h-7 md:h-10 w-7 md:w-10 rounded-full mr-2"
             />
-          )} */}
-          <img
-            src={userDefaultPicture}
-            alt="Profile"
-            className="h-7 md:h-10 w-7 md:w-10 rounded-full mr-2"
-          />
-          {/* {user ? (
+          )}
+          {user ? (
             <Button
               onClick={handleLogOut}
-              className="hidden md:block bg-[#403F3F] rounded-md  font-semibold text-base text-[#fff]"
-              variant="gradient"
+              className="hidden md:block bg-[#29276B] hover:bg-[#3b2b94 rounded-md  font-semibold text-base text-[#fff]"
               size="sm"
             >
               <span>Log Out</span>
@@ -143,22 +144,13 @@ const NavBar = () => {
           ) : (
             <Link to="/login">
               <Button
-                className="hidden md:block bg-[#403F3F] rounded-md  font-semibold text-base text-[#fff]"
-                variant="gradient"
+                className="hidden md:block bg-[#29276B] hover:bg-[#3b2b94]  rounded-md  font-semibold text-base text-[#fff]"
                 size="sm"
               >
                 <span>Login</span>
               </Button>
             </Link>
-          )} */}
-          <Link to="/login">
-            <Button
-              className="hidden md:block bg-[#29276B] hover:bg-[#3b2b94]  rounded-md  font-semibold text-base text-[#fff]"
-              size="sm"
-            >
-              <span>Login</span>
-            </Button>
-          </Link>
+          )}
         </div>
         <IconButton
           variant="text"
@@ -201,28 +193,22 @@ const NavBar = () => {
       <Collapse open={openNav}>
         <div className="container mx-auto">
           {navList}
-          {/* {user ? (
+          {user ? (
             <Button
               onClick={handleLogOut}
-              variant="gradient"
               size="sm"
               fullWidth
-              className="mb-2"
+              className="mb-2 bg-[#29276B]"
             >
               <span>Log out</span>
             </Button>
           ) : (
             <Link to="/login">
-              <Button variant="gradient" size="sm" fullWidth className="mb-2">
+              <Button size="sm" fullWidth className="mb-2 bg-[#29276B]">
                 <span>Login</span>
               </Button>
             </Link>
-          )} */}
-          <Link to="/login">
-            <Button size="sm" fullWidth className="mb-2 bg-[#29276B]">
-              <span>Login</span>
-            </Button>
-          </Link>
+          )}
         </div>
       </Collapse>
     </Navbar>

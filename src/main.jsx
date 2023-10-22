@@ -6,6 +6,9 @@ import Root from "./components/Root";
 import { ThemeProvider } from "@material-tailwind/react";
 import ErrorPage from "./components/ErrorPage";
 import Home from "./components/Home";
+import Register from "./components/Register/Register";
+import Login from "./components/Login/Login";
+import AuthProviders from "./Providers/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -18,14 +21,24 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () => fetch("/brandCard.json"),
       },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ThemeProvider>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <AuthProviders>
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </AuthProviders>
   </React.StrictMode>
 );
