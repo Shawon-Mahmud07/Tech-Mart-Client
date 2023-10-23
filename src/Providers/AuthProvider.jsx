@@ -12,7 +12,6 @@ import {
 import { toast } from "react-toastify";
 import { Navigate } from "react-router-dom";
 import app from "../firebase/firebase.config";
-
 const auth = getAuth(app);
 
 export const AuthContext = createContext(null);
@@ -61,8 +60,6 @@ const AuthProviders = ({ children }) => {
     };
   }, []);
 
-  // Create a password-based account
-  // createUserWithEmailAndPassword
   const authInfo = {
     user,
     userCreate,

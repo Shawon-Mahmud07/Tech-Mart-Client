@@ -67,7 +67,7 @@ const NavBar = () => {
       </Typography>
 
       <NavLink
-        to="/gallery"
+        to="/addProduct"
         className={({ isActive }) =>
           isActive
             ? "flex items-center text-[#F04923] font-bold underline text-lg"
@@ -114,18 +114,23 @@ const NavBar = () => {
       className=" rounded-none shadow py-2 bg-[#ede8e8] dark:bg-[#0F172A]  "
     >
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <div className="lg:flex items-center">
+        <div className="-ml-6 mr-4 md:mr-0 md:-ml-0 ">
           <img className="w-32 h-14 md:w-36 md:h-16" src={logo} alt="" />
         </div>
         <div className="hidden lg:block">{navList}</div>
-        <div className="flex  items-center">
+        <div className="flex  items-center gap-2">
           {" "}
           {user ? (
-            <img
-              src={user.photoURL}
-              alt="Profile"
-              className="h-7 md:h-10 w-7 md:w-10 rounded-full mr-2"
-            />
+            <div className="flex  md:flex-col justify-center items-center">
+              <img
+                src={user.photoURL}
+                alt="Profile"
+                className="h-8 dark:border md:h-10 w-8 md:w-10 rounded-full mr-2"
+              />
+              <Typography className="text-xs md:text-sm font-medium text-[#29276B] dark:text-white">
+                {user ? user.displayName : ""}
+              </Typography>
+            </div>
           ) : (
             <img
               src={userDefaultPicture}
@@ -152,6 +157,7 @@ const NavBar = () => {
             </Link>
           )}
         </div>
+
         <IconButton
           variant="text"
           className="ml-2 h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden dark:text-white"

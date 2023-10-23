@@ -73,7 +73,7 @@ const Login = () => {
     <div>
       <div className="mb-5 md:mb-20 ">
         <div className="mt-10 flex justify-center ">
-          <Card className="w-96">
+          <Card className="w-96 ">
             <CardHeader
               variant="gradient"
               className="mb-4 grid h-24 place-items-center bg-[#29276B]"
@@ -82,7 +82,7 @@ const Login = () => {
                 Login your account
               </Typography>
             </CardHeader>
-            <CardBody className=" relative flex flex-col gap-4">
+            <CardBody className=" relative flex flex-col gap-4 ">
               <Input
                 label="Email"
                 size="lg"

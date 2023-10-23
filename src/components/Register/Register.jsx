@@ -29,8 +29,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
-    // const name = form.get("name");
-
+    const name = form.get("name");
     const email = form.get("email");
     const password = form.get("password");
     const checkBox = form.get("terms");
@@ -92,7 +91,10 @@ const Register = () => {
     <div>
       <div className="mt-10 mb-5 md:mb-20 flex justify-center ">
         <Card color="transparent" shadow={false}>
-          <Typography variant="h4" className="text-[#29276B]">
+          <Typography
+            variant="h4"
+            className="text-[#29276B] dark:brightness-200"
+          >
             Register your account
           </Typography>
 
@@ -101,7 +103,7 @@ const Register = () => {
             className="mt-8 mb-2 w-72 md:w-80 max-w-screen-lg sm:w-96"
           >
             <div className=" relative mb-4 flex flex-col gap-6">
-              {/* <Input name="name" size="lg" label="Name" required /> */}
+              <Input name="name" size="lg" label="Name" required />
 
               <Input name="email" size="lg" label="Email" required />
               <Input
