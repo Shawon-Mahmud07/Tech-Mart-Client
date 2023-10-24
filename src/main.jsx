@@ -12,6 +12,8 @@ import AuthProviders from "./Providers/AuthProvider";
 import AddProduct from "./components/Pages/AddProduct";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
 import Products from "./components/Pages/Products";
+import ProductDetails from "./components/Pages/ProductDetails";
+import UpdateProduct from "./components/Pages/UpdateProduct";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +51,26 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.title}`),
+      },
+      {
+        path: "/details/:id",
+        element: (
+          <PrivetRoute>
+            <ProductDetails></ProductDetails>
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/id/${params.id}`),
+      },
+      {
+        path: "/update/:id",
+        element: (
+          <PrivetRoute>
+            <UpdateProduct></UpdateProduct>
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/id/${params.id}`),
       },
     ],
   },

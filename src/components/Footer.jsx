@@ -1,5 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 import logo from "../assets/Img/logo.png";
+import { Link } from "react-router-dom";
 
 const LINKS = [
   {
@@ -23,11 +24,13 @@ const Footer = () => {
     <footer className="relative w-full bg-[#ede8e8] dark:bg-[#0F172A] dark:border   mt-10 md:mt-20 pt-5">
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
-          <img
-            className="w-32 h-14 md:w-36 md:h-16 -ml-4 md:-ml-0"
-            src={logo}
-            alt=""
-          />
+          <Link>
+            <img
+              className="w-32 h-14 md:w-36 md:h-16 -ml-4 md:-ml-0"
+              src={logo}
+              alt=""
+            />
+          </Link>
           <div className="grid grid-cols-3 justify-between gap-4">
             {LINKS.map(({ title, items }) => (
               <ul key={title}>

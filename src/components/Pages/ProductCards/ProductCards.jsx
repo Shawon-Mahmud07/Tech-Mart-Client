@@ -7,8 +7,9 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 const ProductCards = ({ productItem }) => {
-  const { name, bName, type, price, rating, photo } = productItem;
+  const { name, bName, type, price, rating, photo, _id } = productItem;
 
   return (
     <div>
@@ -50,18 +51,22 @@ const ProductCards = ({ productItem }) => {
           </div>
         </CardBody>
         <CardFooter className="pt-0 flex gap-5 justify-center">
-          <Button
-            ripple={false}
-            className=" bg-[#29276B] text-white shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-          >
-            Details
-          </Button>
-          <Button
-            ripple={false}
-            className="  bg-[#29276B] text-white shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-          >
-            Update
-          </Button>
+          <Link to={`/details/${_id}`}>
+            <Button
+              ripple={false}
+              className=" bg-[#29276B] text-white shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+            >
+              Details
+            </Button>
+          </Link>
+          <Link to={`/update/${_id}`}>
+            <Button
+              ripple={false}
+              className="  bg-[#29276B] text-white shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+            >
+              Update
+            </Button>
+          </Link>
         </CardFooter>
       </Card>
     </div>

@@ -7,7 +7,6 @@ import ProductCards from "./ProductCards/ProductCards";
 
 const Products = () => {
   const brandProducts = useLoaderData();
-  console.log(brandProducts);
 
   return (
     <div>

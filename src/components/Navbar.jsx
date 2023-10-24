@@ -115,7 +115,9 @@ const NavBar = () => {
     >
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <div className="-ml-6 mr-4 md:mr-0 md:-ml-0 ">
-          <img className="w-32 h-14 md:w-36 md:h-16" src={logo} alt="" />
+          <Link>
+            <img className="w-32 h-14 md:w-36 md:h-16" src={logo} alt="" />
+          </Link>
         </div>
         <div className="hidden lg:block">{navList}</div>
         <div className="flex  items-center gap-2">
