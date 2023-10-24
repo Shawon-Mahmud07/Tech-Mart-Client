@@ -11,6 +11,7 @@ import Login from "./components/Login/Login";
 import AuthProviders from "./Providers/AuthProvider";
 import AddProduct from "./components/Pages/AddProduct";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
+import Products from "./components/Pages/Products";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,16 @@ const router = createBrowserRouter([
             <AddProduct></AddProduct>
           </PrivetRoute>
         ),
+      },
+      {
+        path: "/products/:title",
+        element: (
+          <PrivetRoute>
+            <Products></Products>
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.title}`),
       },
     ],
   },

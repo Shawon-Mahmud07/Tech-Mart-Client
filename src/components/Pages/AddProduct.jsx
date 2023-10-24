@@ -23,9 +23,10 @@ const AddProduct = () => {
       details,
       photo,
     };
+    console.log(newProduct);
 
     // send data to the server
-    fetch("http://localhost:5000/coffee", {
+    fetch("http://localhost:5000/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -38,7 +39,7 @@ const AddProduct = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "success!",
-            text: "Coffee Added Successfully",
+            text: "Product Added Successfully",
             icon: "success",
             confirmButtonText: "Close",
           });
@@ -57,13 +58,14 @@ const AddProduct = () => {
           </div>
           <Form onSubmit={handleFormSubmit}>
             <div className="my-5">
-              <div className="flex flex-col gap-3 md:gap-0 md:flex-row">
+              <div className="flex flex-col gap-3 md:gap-0  md:flex-row">
                 <div className="  w-9/12 mx-auto md:w-1/2 md:px-3">
                   <h2 className="mb-3">Name</h2>
                   <Input
                     className="bg-[#FFFFFF]"
                     name="name"
                     label="Enter product name"
+                    required
                   />
                 </div>
 
@@ -73,6 +75,7 @@ const AddProduct = () => {
                     className="bg-[#FFFFFF]"
                     name="bName"
                     label="Enter brand name"
+                    required
                   />
                 </div>
               </div>
@@ -84,7 +87,8 @@ const AddProduct = () => {
                   <Input
                     className="bg-[#FFFFFF]"
                     name="type"
-                    label="Phone/Computer/Headphone"
+                    label="Phone/Monitor/Headphone/Other"
+                    required
                   />
                 </div>
 
@@ -94,6 +98,7 @@ const AddProduct = () => {
                     className="bg-[#FFFFFF]"
                     name="price"
                     label="Enter price"
+                    required
                   />
                 </div>
               </div>
@@ -106,6 +111,7 @@ const AddProduct = () => {
                     className="bg-[#FFFFFF]"
                     name="rating"
                     label="Enter rating(0-5)"
+                    required
                   />
                 </div>
 
@@ -115,6 +121,7 @@ const AddProduct = () => {
                     className="bg-[#FFFFFF]"
                     name="details"
                     label="Enter product details"
+                    required
                   />
                 </div>
               </div>
@@ -127,6 +134,7 @@ const AddProduct = () => {
                     className="bg-[#FFFFFF]"
                     name="photo"
                     label="Enter photo URL"
+                    required
                   />
                 </div>
               </div>
