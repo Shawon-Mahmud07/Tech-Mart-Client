@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -8,18 +7,21 @@ import ErrorPage from "./components/ErrorPage";
 import Home from "./components/Home";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
-import AuthProviders from "./Providers/AuthProvider";
 import AddProduct from "./components/Pages/AddProduct";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
 import Products from "./components/Pages/Products";
 import ProductDetails from "./components/Pages/ProductDetails";
 import UpdateProduct from "./components/Pages/UpdateProduct";
+import MyCarts from "./components/Pages/MyCarts";
+import AuthProviders from "./Providers/AuthProvider";
+import React from "react";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
+
     children: [
       {
         path: "/",
@@ -71,6 +73,16 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/id/${params.id}`),
+      },
+      {
+        path: "/carts",
+        element: (
+          <PrivetRoute>
+            <MyCarts></MyCarts>
+          </PrivetRoute>
+        ),
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:5000/carts/${params.email}`),
       },
     ],
   },

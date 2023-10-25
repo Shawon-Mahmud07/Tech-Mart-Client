@@ -86,19 +86,19 @@ const NavBar = () => {
       >
         Register
       </NavLink>
-      <Typography as="li" variant="small" className="p-1 font-normal">
-        <NavLink
-          to="/cart"
-          className={({ isActive }) =>
-            isActive
-              ? "flex items-center text-[#F04923] font-bold underline text-lg"
-              : "flex items-center text-[#706F6F] dark:text-white text-lg"
-          }
-        >
-          Cart{" "}
-          <HiShoppingCart className="text-3xl text-[#29276B] hover:text-[#4d4aa4] dark:text-white"></HiShoppingCart>
-        </NavLink>
-      </Typography>
+      <NavLink
+        // to={`/carts/${user?.email}`}
+        to="/carts"
+        className={({ isActive }) =>
+          isActive
+            ? "flex items-center text-[#F04923] font-bold underline text-lg"
+            : "flex items-center text-[#706F6F] dark:text-white text-lg"
+        }
+      >
+        Cart
+        <HiShoppingCart className="text-3xl text-[#29276B] hover:text-[#4d4aa4] dark:text-white"></HiShoppingCart>
+      </NavLink>
+
       <Typography
         onClick={() => toggleTheme()}
         as="li"
