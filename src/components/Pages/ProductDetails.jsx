@@ -16,16 +16,19 @@ const ProductDetails = () => {
   const productObj = useLoaderData();
   const { name, photo, details, bName, price, type, rating } = productObj;
 
-  const addToCart = {...productObj, email: user.email};
+  const addToCart = { ...productObj, email: user.email };
   const handleAddToCart = () => {
     // send data to the server
-    fetch("http://localhost:5000/carts", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(addToCart),
-    })
+    fetch(
+      "https://tech-mart-server-phsoeaama-shawon-mahmud-s-projects.vercel.app/carts",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addToCart),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

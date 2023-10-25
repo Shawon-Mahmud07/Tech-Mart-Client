@@ -52,7 +52,9 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.title}`),
+          fetch(
+            `https://tech-mart-server-phsoeaama-shawon-mahmud-s-projects.vercel.app/products/${params.title}`
+          ),
       },
       {
         path: "/details/:id",
@@ -62,7 +64,9 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/id/${params.id}`),
+          fetch(
+            `https://tech-mart-server-phsoeaama-shawon-mahmud-s-projects.vercel.app/products/id/${params.id}`
+          ),
       },
       {
         path: "/update/:id",
@@ -72,7 +76,9 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/id/${params.id}`),
+          fetch(
+            `https://tech-mart-server-phsoeaama-shawon-mahmud-s-projects.vercel.app/products/id/${params.id}`
+          ),
       },
       {
         path: "/carts",
@@ -81,8 +87,6 @@ const router = createBrowserRouter([
             <MyCarts></MyCarts>
           </PrivetRoute>
         ),
-        // loader: ({ params }) =>
-        //   fetch(`http://localhost:5000/carts/${params.email}`),
       },
     ],
   },
