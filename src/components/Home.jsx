@@ -4,7 +4,6 @@ import Feature from "./Feature";
 
 import Support from "./Support";
 import BrandCards from "./BrandCards";
-import { ToastContainer } from "react-toastify";
 
 const Home = () => {
   const brandCards = useLoaderData();
@@ -14,7 +13,7 @@ const Home = () => {
       <BrandCards brandCards={brandCards}></BrandCards>
       <Support></Support>
       <Feature></Feature>
-      <ToastContainer></ToastContainer>
+      
     </div>
   );
 };

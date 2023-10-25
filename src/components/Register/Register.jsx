@@ -8,9 +8,8 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 
 import { useContext, useState } from "react";
-
+import { ToastContainer } from "react-toastify";
 import { HiEyeOff, HiEye } from "react-icons/hi";
-// import { ToastContainer, toast } from "react-toastify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { updateProfile } from "firebase/auth";
@@ -146,7 +145,7 @@ const Register = () => {
           </form>
         </Card>
       </div>
-      {/* <ToastContainer></ToastContainer> */}
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
