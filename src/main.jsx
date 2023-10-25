@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://tech-mart-server-phsoeaama-shawon-mahmud-s-projects.vercel.app/products/${params.title}`
+            `https://tech-mart-server-seven.vercel.app/products/${params.title}`
           ),
       },
       {
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://tech-mart-server-phsoeaama-shawon-mahmud-s-projects.vercel.app/products/id/${params.id}`
+            `https://tech-mart-server-seven.vercel.app/products/id/${params.id}`
           ),
       },
       {
@@ -77,7 +77,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://tech-mart-server-phsoeaama-shawon-mahmud-s-projects.vercel.app/products/id/${params.id}`
+            `https://tech-mart-server-seven.vercel.app/products/id/${params.id}`
           ),
       },
       {

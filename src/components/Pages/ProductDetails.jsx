@@ -19,16 +19,13 @@ const ProductDetails = () => {
   const addToCart = { ...productObj, email: user.email };
   const handleAddToCart = () => {
     // send data to the server
-    fetch(
-      "https://tech-mart-server-phsoeaama-shawon-mahmud-s-projects.vercel.app/carts",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(addToCart),
-      }
-    )
+    fetch("https://tech-mart-server-seven.vercel.app/carts", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addToCart),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

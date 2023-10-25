@@ -28,17 +28,13 @@ const UpdateProduct = () => {
       photo,
     };
     // send data to the server
-    fetch(
-      `https://tech-mart-server-phsoeaama-shawon-mah
-mud-s-projects.vercel.app/products/${_id}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(updatedProduct),
-      }
-    )
+    fetch(`https://tech-mart-server-seven.vercel.app/products/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedProduct),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

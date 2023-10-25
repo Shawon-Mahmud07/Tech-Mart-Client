@@ -67,9 +67,10 @@ const Products = () => {
       </Carousel>
 
       <div className=" grid grid-cols-1 gap-10 mx-5 md:mx-10 md:grid-cols-3 mt-5">
-        {brandProducts.map((productItem, index) => (
-          <ProductCards productItem={productItem} key={index}></ProductCards>
-        ))}
+        {brandProducts.length &&
+          brandProducts?.map((productItem, index) => (
+            <ProductCards productItem={productItem} key={index}></ProductCards>
+          ))}
       </div>
     </div>
   );

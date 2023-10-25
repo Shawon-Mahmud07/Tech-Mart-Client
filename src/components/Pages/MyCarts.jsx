@@ -10,9 +10,7 @@ const MyCarts = () => {
   const [cartData, setCartData] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://tech-mart-server-phsoeaama-shawon-mahmud-s-projects.vercel.app/carts/${user?.email}`
-    )
+    fetch(`https://tech-mart-server-seven.vercel.app/carts/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCartData(data));
   }, [user?.email]);
