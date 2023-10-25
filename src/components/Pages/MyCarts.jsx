@@ -21,7 +21,12 @@ const MyCarts = () => {
       </h2>
       <div className="grid grid-cols-1 gap-8 md:gap-10 md:grid-cols-2 mx-3 mt-4">
         {cartData.map((cart, index) => (
-          <Carts key={index} cart={cart}></Carts>
+          <Carts
+            key={index}
+            cart={cart}
+            cartData={cartData}
+            setCartData={setCartData}
+          ></Carts>
         ))}
       </div>
     </div>

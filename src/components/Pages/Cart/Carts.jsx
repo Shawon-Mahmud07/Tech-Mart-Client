@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Swal from "sweetalert2";
 import {
   Card,
   CardHeader,
@@ -6,10 +7,39 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-const Carts = ({ cart }) => {
-  const { name, photo, bName, price, type, rating } = cart;
+const Carts = ({ cart, cartData, setCartData }) => {
+  const { name, photo, bName, price, type, rating, _id } = cart;
 
-  const handleDeleteBtn = () => {};
+  const handleDeleteBtn = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/carts/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                "Your cart product has been deleted.",
+                "success"
+              );
+              const remaining = cartData.filter((data) => data._id !== _id);
+              setCartData(remaining);
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div>
@@ -54,5 +84,7 @@ const Carts = ({ cart }) => {
 };
 Carts.propTypes = {
   cart: PropTypes.object,
+  cartData: PropTypes.array,
+  setCartData: PropTypes.array,
 };
 export default Carts;
