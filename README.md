@@ -47,3 +47,10 @@
   product within the fastest delivery timeframe. Covering all 64 districts of
   Bangladesh, our distribution hubs are located in Dhaka, Chattogram, Khulna,
   Rangpur, Gazipur, and Rajshahi.
+
+## Technologies Used:
+
+- **Frontend:** JavaScript, TailwindCSS, React.js, Material Tailwind.
+- **Server:** Node.js, Express.js
+
+- **Authentication:** Firebase
